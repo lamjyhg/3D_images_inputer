@@ -94,7 +94,6 @@ function ShowPage() {
     //   const garageItemsString = localStorage.getItem('canvas');
     //   const items = JSON.parse(garageItemsString);
     //   setGarageItems(items ? items : []);
-    // } catch (error) {}
   }, []);
 
   return (
