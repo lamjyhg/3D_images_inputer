@@ -1,0 +1,38 @@
+.garage__canvas {
+  width: 90%;
+  overflow: auto;
+  height: 500px;
+  margin: auto;
+  canvas {
+    height: 100%;
+  }
+  &__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3px;
+    &__actions {
+      display: flex;
+      flex-direction: column-reverse;
+      #addImageButton {
+        &__input {
+          display: none;
+        }
+      }
+    }
+    > p {
+      margin: 0;
+      margin-top: 30px;
+    }
+  }
+}
+#dashboard_garage_canvas_header_actions_select {
+  width: 150px;
+}
+#dashboard_garage_canvas_header_actions_button {
+  margin-right: 20px;
+  height: 55.98px;
+}
+#dashboard_garage_canvas_header_actions_button2 {
+  height: 55.98px;
+}
