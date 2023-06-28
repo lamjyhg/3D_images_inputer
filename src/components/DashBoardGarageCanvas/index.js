@@ -77,6 +77,7 @@ const DashboardGarageCanvas = ({
 
   useEffect(() => {
     setWidth(window.innerWidth);
+    console.log(1);
   }, [window.innerWidth]);
 
   return (

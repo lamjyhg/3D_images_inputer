@@ -1,0 +1,26 @@
+.canvas__toolBar {
+  position: absolute;
+  bottom: 10px;
+  z-index: 1;
+
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  .addImageButton {
+    position: relative;
+    label {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+    }
+    #addImageButton__input {
+      display: none;
+    }
+  }
+  &__buttonGroup {
+    margin: auto;
+  }
+}

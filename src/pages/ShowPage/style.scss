@@ -1,0 +1,15 @@
+.canvasPage {
+  position: relative;
+  header {
+    width: 100%;
+    position: absolute;
+    h1 {
+      text-align: center;
+      font-family: Fantasy;
+      font-size: 1em;
+      @media only screen and (max-width: 600px) {
+        font-size: 0.8em;
+      }
+    }
+  }
+}

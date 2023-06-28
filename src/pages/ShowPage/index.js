@@ -12,10 +12,11 @@ import Resizer from 'react-image-file-resizer';
 import { v4 as uuidv4 } from 'uuid';
 import React from 'react';
 import DashboardGarageCanvas from '../../components/DashBoardGarageCanvas';
-import CanvasHeader from '../../components/CanvasHeader';
+import CanvasToolBar from '../../components/CanvasToolBar';
 
-// // CSS
-// import './index.scss';
+// style
+import './style.scss';
+import CanvasIntroductionModal from '../../components/CanvasIntroductionModal';
 
 // // Assets
 // import Lottie from 'lottie-react';
@@ -97,8 +98,15 @@ function ShowPage() {
   }, []);
 
   return (
-    <div>
-      <CanvasHeader
+    <div className="canvasPage">
+      <header>
+        <h1>Jeun's Dream</h1>
+      </header>
+      {/* <CanvasIntroductionModal
+        open={true}
+        setOpen={undefined}
+      ></CanvasIntroductionModal> */}
+      <CanvasToolBar
         control={control}
         addItemIntoCanvas={addItemIntoCanvas}
         setAction={setAction}
