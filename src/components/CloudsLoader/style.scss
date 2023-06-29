@@ -1,0 +1,33 @@
+.cloudLoader {
+  width: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  svg {
+    position: relative;
+    top: 20px;
+    display: inline-block;
+    animation: bounce 0.3s ease infinite alternate;
+  }
+  svg:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  svg:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  svg:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+  svg:nth-child(5) {
+    animation-delay: 0.4s;
+  }
+}
+
+@keyframes bounce {
+  100% {
+    top: -17px;
+    text-shadow: 0 1px #ccc, 0 2px #ccc, 0 3px #ccc, 0 4px #ccc, 0 5px #ccc,
+      0 6px #ccc, 0 7px #ccc, 0 8px #ccc, 0 9px #ccc,
+      0 50px 25px rgba(0, 0, 0, 0.2);
+  }
+}

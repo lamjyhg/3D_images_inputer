@@ -72,13 +72,16 @@ const DashboardGarageCanvas = ({
   const font = new FontLoader().parse(hellofont);
 
   useEffect(() => {
-    setHeight(window.innerHeight);
-  }, [window.innerHeight]);
+    const updateDimension = () => {
+      setWidth(window.innerWidth);
+      setHeight(window.innerHeight);
+    };
+    window.addEventListener('resize', updateDimension);
 
-  useEffect(() => {
-    setWidth(window.innerWidth);
-    console.log(1);
-  }, [window.innerWidth]);
+    return () => {
+      window.removeEventListener('resize', updateDimension);
+    };
+  }, [height, width]);
 
   return (
     <div id="garage__canvas">

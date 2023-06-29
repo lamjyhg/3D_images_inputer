@@ -1,13 +1,7 @@
 // React
 import { useEffect, useState } from 'react';
 
-// MUI
-
-// // Components
-// import DashboardGarageCanvas from '../../../components/DashBoardGarageCanvas';
-// import DashboardGarageItemList from '../../../components/DashBoardGarageItemList';
-
-// // Utils
+// Utils
 import Resizer from 'react-image-file-resizer';
 import { v4 as uuidv4 } from 'uuid';
 import React from 'react';
@@ -18,13 +12,11 @@ import CanvasToolBar from '../../components/CanvasToolBar';
 import './style.scss';
 import CanvasIntroductionModal from '../../components/CanvasIntroductionModal';
 
-// // Assets
-// import Lottie from 'lottie-react';
-// import emptyImage from './../../../images/lotties/2705-image-loading.json';
-
 function ShowPage() {
   // header toggle buttons
-  const [action, setAction] = React.useState('translate');
+  const [modalOpen, setModalOpen] = useState(true);
+  const [action, setAction] = useState('translate');
+  const [dreamName, setDreamName] = useState(``);
   const handleChangeAction = (event, newAlignment) => {
     setAction(newAlignment);
   };
@@ -97,28 +89,35 @@ function ShowPage() {
   }, []);
 
   return (
-    <div className="canvasPage">
-      <header>
-        <h1>Jeun's Dream</h1>
-      </header>
-      {/* <CanvasIntroductionModal
-        open={true}
-        setOpen={undefined}
-      ></CanvasIntroductionModal> */}
-      <CanvasToolBar
-        control={control}
-        addItemIntoCanvas={addItemIntoCanvas}
-        setAction={setAction}
-        save={save}
-      />
-      <DashboardGarageCanvas
-        action={action}
-        items={garageItems}
-        handleMove={handleMove}
-        handleDelete={handleDelete}
-        garageName={undefined}
-      ></DashboardGarageCanvas>
-    </div>
+    <>
+      {modalOpen ? (
+        <CanvasIntroductionModal
+          open={modalOpen}
+          setOpen={setModalOpen}
+          setDreamName={setDreamName}
+        ></CanvasIntroductionModal>
+      ) : (
+        <div className="canvasPage">
+          <header>
+            <h1>{dreamName}</h1>
+          </header>
+
+          <CanvasToolBar
+            control={control}
+            addItemIntoCanvas={addItemIntoCanvas}
+            setAction={setAction}
+            save={save}
+          />
+          <DashboardGarageCanvas
+            action={action}
+            items={garageItems}
+            handleMove={handleMove}
+            handleDelete={handleDelete}
+            garageName={undefined}
+          ></DashboardGarageCanvas>
+        </div>
+      )}
+    </>
   );
 }
 export default ShowPage;
